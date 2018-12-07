@@ -273,6 +273,10 @@ describe "Budgets" do
       visit budgets_path
 
       within ".map-location" do
+        expect(page).to have_css(".marker-cluster div span", text: "3")
+
+        find(".marker-cluster").click
+
         expect(page).to have_css(".map-icon", count: 3, visible: :all)
       end
     end
@@ -291,6 +295,10 @@ describe "Budgets" do
       visit budgets_path
 
       within ".map-location" do
+        expect(page).to have_css(".marker-cluster div span", text: "4")
+
+        find(".marker-cluster").click
+
         expect(page).to have_css(".map-icon", count: 4, visible: :all)
       end
     end
@@ -309,6 +317,10 @@ describe "Budgets" do
       visit budgets_path
 
       within ".map-location" do
+        expect(page).to have_css(".marker-cluster div span", text: "2")
+
+        find(".marker-cluster").click
+
         expect(page).to have_css(".map-icon", count: 2, visible: :all)
       end
     end

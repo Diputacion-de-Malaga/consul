@@ -1637,6 +1637,10 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within ".map-location" do
+        expect(page).to have_css(".marker-cluster div span", text: "6")
+
+        find(".marker-cluster").click
+
         expect(page).to have_css(".map-icon", count: 6, visible: :all)
       end
     end
@@ -1660,6 +1664,10 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within ".map-location" do
+        expect(page).to have_css(".marker-cluster div span", text: "4")
+
+        find(".marker-cluster").click
+
         expect(page).to have_css(".map-icon", count: 4, visible: :all)
       end
     end
@@ -1696,6 +1704,10 @@ describe "Budget Investments" do
       end
 
       within(".map-location") do
+        expect(page).to have_css(".marker-cluster", text: "3")
+
+        find(".marker-cluster").click
+
         expect(page).to have_css(".map-icon", count: 3, visible: :all)
       end
     end
