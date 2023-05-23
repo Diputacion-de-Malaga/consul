@@ -1627,13 +1627,12 @@ describe "Budget Investments" do
       investment4 = create(:budget_investment, heading: heading)
       investment5 = create(:budget_investment, heading: heading)
       investment6 = create(:budget_investment, heading: heading)
-
-      create(:map_location, longitude: 40.1231, latitude: -3.636, investment: investment1)
-      create(:map_location, longitude: 40.1232, latitude: -3.635, investment: investment2)
-      create(:map_location, longitude: 40.1233, latitude: -3.634, investment: investment3)
-      create(:map_location, longitude: 40.1234, latitude: -3.633, investment: investment4)
-      create(:map_location, longitude: 40.1235, latitude: -3.632, investment: investment5)
-      create(:map_location, longitude: 40.1236, latitude: -3.631, investment: investment6)
+      create(:map_location, longitude: -3.703790, latitude: 40.416775, investment: investment1)
+      create(:map_location, longitude: -3.703790, latitude: 40.416776, investment: investment2)
+      create(:map_location, longitude: -3.703790, latitude: 40.416777, investment: investment3)
+      create(:map_location, longitude: -3.703790, latitude: 40.416778, investment: investment4)
+      create(:map_location, longitude: -3.703790, latitude: 40.416779, investment: investment5)
+      create(:map_location, longitude: -3.703790, latitude: 40.416774, investment: investment6)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -1651,13 +1650,12 @@ describe "Budget Investments" do
       investment4 = create(:budget_investment, heading: heading)
       investment5 = create(:budget_investment, heading: heading_2)
       investment6 = create(:budget_investment, heading: heading_2)
-
-      create(:map_location, longitude: 40.1231, latitude: -3.636, investment: investment1)
-      create(:map_location, longitude: 40.1232, latitude: -3.685, investment: investment2)
-      create(:map_location, longitude: 40.1233, latitude: -3.664, investment: investment3)
-      create(:map_location, longitude: 40.1234, latitude: -3.673, investment: investment4)
-      create(:map_location, longitude: 40.1235, latitude: -3.672, investment: investment5)
-      create(:map_location, longitude: 40.1236, latitude: -3.621, investment: investment6)
+      create(:map_location, longitude: -3.703790, latitude: 40.416775, investment: investment1)
+      create(:map_location, longitude: -3.703790, latitude: 40.416776, investment: investment2)
+      create(:map_location, longitude: -3.703790, latitude: 40.416777, investment: investment3)
+      create(:map_location, longitude: -3.703790, latitude: 40.416778, investment: investment4)
+      create(:map_location, longitude: -3.703790, latitude: 40.416779, investment: investment5)
+      create(:map_location, longitude: -3.703790, latitude: 40.416774, investment: investment6)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
