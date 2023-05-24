@@ -171,7 +171,12 @@
           if (App.Map.validCoordinates(coordinates)) {
             marker = createMarker(coordinates.lat, coordinates.long);
             marker.options.id = coordinates.investment_id;
-            marker.on("click", App.Map.openMarkerPopup);
+
+            marker.bindPopup(function() {
+              var popupContent = document.createElement("div");
+              App.Map.openMarkerPopup(popupContent, marker.options.id);
+              return popupContent;
+            });
           }
         });
       }
@@ -194,13 +199,12 @@
       map.attributionControl.setPrefix(App.Map.attributionPrefix());
       L.tileLayer(mapTilesProvider, { attribution: mapAttribution }).addTo(map);
     },
-    openMarkerPopup: function(e) {
-      var marker = e.target;
-      $.ajax("/investments/" + marker.options.id + "/json_data", {
+    openMarkerPopup: function(content, id) {
+      $.ajax("/investments/" + id + "/json_data", {
         type: "GET",
         dataType: "json",
         success: function(data) {
-          e.target.bindPopup(App.Map.getPopupContent(data)).openPopup();
+          content.innerHTML = App.Map.getPopupContent(data);
         }
       });
     },
