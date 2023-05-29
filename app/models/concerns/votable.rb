@@ -20,6 +20,17 @@ module Votable
     parse_vote_value(vote_value) ? unliked_by(user) : undisliked_by(user)
   end
 
+  def is_pressed?(user, value)
+    case user&.voted_as_when_voted_for(self)
+    when true
+      value == "yes"
+    when false
+      value == "no"
+    else
+      false
+    end
+  end
+
   private
 
     def parse_vote_value(vote_value)
