@@ -1,0 +1,31 @@
+<footer>
+  <div class="row">
+    <div class="small-12 large-4 column">
+      <h1 class="logo">
+        <%= link_to t("layouts.header.open_gov"), root_path %>
+      </h1>
+
+      <p class="info">
+        <%= sanitize(t("layouts.footer.description",
+          open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
+          consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow"))) %>
+      </p>
+    </div>
+  </div>
+
+  <div class="subfooter row">
+    <div class="left-element small-12 medium-3 column inline-block">
+      <%= link_to "Diputación Provincial de Málaga 2023", "https://malaga.es", target: "_blank"  %>
+    </div>
+    <div class="middle-element small-12 medium-5 column">
+      <ul class="no-bullet inline-block">
+        <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path("privacy") %>&nbsp;|</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path("conditions") %>&nbsp;|</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %></li>
+      </ul>
+    </div>
+    <div class="right-element small-12 medium-4 column">
+      <%= render Layout::SocialComponent.new %>
+    </div>
+  </div>
+</footer>

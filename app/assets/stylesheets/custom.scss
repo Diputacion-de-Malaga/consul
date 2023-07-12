@@ -139,3 +139,55 @@ footer {
 .footer {
   background: $brand;
 }
+
+.subfooter {
+  border-top: 1px solid $text-light;
+  font-size: $small-font-size;
+  padding-top: $line-height;
+  ul {
+    margin: 0;
+  }
+  .left-element {
+    a {
+      text-decoration: none;
+      font-weight: 800;
+      &:hover {
+        text-decoration: underline;
+        color: white;
+      }
+    }
+  }
+  .middle-element {
+    display: flex;
+    justify-content: center;
+    a {
+      text-decoration: none;
+      font-weight: 400;
+      &:hover {
+        text-decoration: underline;
+        color: white;
+      }
+    }
+  }
+  .right-element {
+    .social {
+      padding: 0;
+      width: 100%;
+      ul {
+        font-size: 14px;
+        a {
+          font-size: rem-calc(14);
+          &:hover {
+            text-decoration: underline;
+            color: white;
+          }
+        }
+        li:first-child {
+          a {
+            margin-left: 0 !important;
+          }
+        }
+      }
+    }
+  }
+}
