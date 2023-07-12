@@ -40,6 +40,10 @@
 .top-bar {
   background-color: $white !important;
 
+  button.menu-button {
+    color: $brand;
+  }
+
   .menu > li {
     display: block;
     width: 100%;
@@ -75,9 +79,11 @@
   .top-bar-title {
     line-height: $line-height;
     margin-right: 0;
+    flex: 1 1 auto;
 
     a img {
-      height: rem-calc(80);
+      height: 100%;
+      max-height: rem-calc(80);
       margin: 0;
       width: auto;
     }
