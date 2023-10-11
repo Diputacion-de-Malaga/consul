@@ -58,6 +58,12 @@
                                 accesskey: "7" %>
       </li>
     <% end %>
+    <li>
+        <%= layout_menu_link_to t("layouts.header.events"),
+                                "/events",
+                                current_page?("/events"),
+                                accesskey: "8" %>
+    </li>
 
     <%= raw content_block("subnavigation_right") %>
   </ul>
